@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">PrivkeyTool</string>
+    <string name="history">history</string>
+
+
+    <!--<string-array name="arrayname">-->
+
+        <!--　　　　　　<item>item1</item>-->
+
+        <!--　　　　　　<item>item2</item>-->
+
+        <!--　　　　　　<item>item3</item>-->
+
+        <!--　　　　</string-array>-->
+    <string-array name="currencies">
+        <item>BTC</item>
+        <item>BCH</item>
+        <item>BTN</item>
+        <item>QTUM</item>
+        <item>ETH</item>
+        <item>EOS</item>
+    </string-array>
+
+
+
+</resources>

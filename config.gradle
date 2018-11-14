@@ -1,0 +1,61 @@
+ext {
+    // SDK
+    buildToolsVersion = "26.0.3"
+    compileSdkVersion = 26
+    targetSdkVersion = 26
+    minSdkVersion = 21
+    applicationId = 'com.forrest.tool.privkeytool'
+//    applicationIdIV = 'net.forrest.wallet' //International Version
+//    applicationIdTest = 'com.forrest.walletTest'
+
+    jniLibName = "bitw-core-lib"
+    
+    versionCode = 13
+    versionName = "1.3.1"
+    supportLibVersion = "26.1.0"
+
+    androidLib = [
+            supportDesign           :"com.android.support:design:${supportLibVersion}",
+            supportAppcompatV7      :"com.android.support:appcompat-v7:${supportLibVersion}",
+            supportV4               :"com.android.support:support-v4:${supportLibVersion}",
+            supportAnnotations      :"com.android.support:support-annotations:${supportLibVersion}",
+            supportRecyclerviewV7   :"com.android.support:recyclerview-v7:${supportLibVersion}",
+            supportConstraintLayout :"com.android.support.constraint:constraint-layout:1.0.2",
+
+
+            toolsBuildGradle         :"com.android.tools.build:gradle:3.0.1",
+            databindingCompiler      :"com.android.databinding:compiler:3.0.1",
+
+            archLifecycleExtensions     :"android.arch.lifecycle:extensions:1.0.0",
+            archLifecycleCompiler       :"android.arch.lifecycle:compiler:1.0.0",
+
+    ]
+
+    dependenciesLib = [
+            // Kotlin
+            kotlinGradlePlugin          :"org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.21",
+            kotlinStdlibJre7            :"org.jetbrains.kotlin:kotlin-stdlib-jre7:1.2.21",
+            kotlinxCoroutinesAndroid    :'org.jetbrains.kotlinx:kotlinx-coroutines-android:0.22',
+            kodein                      :"com.github.salomonbrys.kodein:kodein:4.1.0",
+            kodeinAndroid               :"com.github.salomonbrys.kodein:kodein-android:4.1.0",
+
+            // BlockChain
+//            ethereumGeth        :"org.ethereum:geth:1.7.3",
+//            bitcoinjCore        :"org.bitcoinj:bitcoinj-core:0.14.4",
+
+            zxingCore           :"com.google.zxing:core:3.3.1",
+            zxingAndroidEmbedded:"com.journeyapps:zxing-android-embedded:3.5.0",
+
+            materialProgressbar :"me.zhanghai.android.materialprogressbar:library:1.4.2",// + versions.mdProgressBar
+
+            gson            :"com.google.code.gson:gson:2.2.4",
+            okhttp3         :"com.squareup.okhttp3:okhttp:3.10.0",
+            stethoOkhttp    : "com.facebook.stetho:stetho-okhttp3:1.5.0",
+            stetho          : "com.facebook.stetho:stetho:1.5.0",
+
+            //glide
+            glideCompiler :"com.github.bumptech.glide:compiler:4.6.1",
+            glideAnnotation:"com.github.bumptech.glide:annotations:4.6.1",
+
+    ]
+}

@@ -1,0 +1,73 @@
+apply from: "../config.gradle"
+
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        //
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        //
+        multiDexEnabled true
+
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath false
+            }
+        }
+    }
+
+    signingConfigs {
+        config {
+            v1SigningEnabled true
+            v2SigningEnabled true
+            keyAlias 'forrest'
+            keyPassword 'forrest'
+            storeFile file('../forrest.ks')
+            storePassword 'forrest'
+        }
+    }
+    
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation 'com.android.support:multidex:1.0.2'
+    // Android support
+    implementation androidLib.supportV4
+    implementation androidLib.supportAppcompatV7
+    implementation androidLib.supportDesign
+    implementation androidLib.supportConstraintLayout
+    implementation 'com.android.support:support-vector-drawable:26.1.0'
+    //    implementation 'androidx.core:core-ktx:0.2'
+    // Kotlin support
+    implementation dependenciesLib.kotlinStdlibJre7
+    implementation dependenciesLib.kotlinxCoroutinesAndroid
+    implementation dependenciesLib.kodein
+    implementation dependenciesLib.kodeinAndroid
+    implementation(name: 'geth', ext: 'aar')
+    implementation project(':bitwallet_blockchain')
+}

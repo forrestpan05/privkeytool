@@ -1,0 +1,38 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+buildscript {
+    apply from: "config.gradle"
+
+    repositories {
+        flatDir {
+            dirs '../libs'
+        }
+        google()
+        jcenter()
+        maven { url "https://dl.bintray.com/ethereum/maven/" }
+    }
+
+    dependencies {
+        classpath androidLib.toolsBuildGradle
+        classpath dependenciesLib.kotlinGradlePlugin
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        flatDir {
+            dirs '../libs'
+        }
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven { url "https://dl.bintray.com/ethereum/maven/" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
